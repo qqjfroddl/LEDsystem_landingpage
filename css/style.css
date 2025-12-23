@@ -241,7 +241,7 @@ body {
 /* 문제 제시 섹션 */
 .problem-section {
     background-color: var(--bg-card);
-    padding: 100px 0;
+    padding: 0;
 }
 
 .problem-content {
@@ -251,7 +251,7 @@ body {
 
 .problem-image {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
 }
 
 .problem-image img {
@@ -271,7 +271,7 @@ body {
     font-size: 1.125rem;
     color: var(--bg-dark);
     line-height: 1.9;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
 }
 
 .problem-text p:last-child {
@@ -281,7 +281,7 @@ body {
 /* 해결책 섹션 */
 .solution-section {
     background-color: var(--bg-card);
-    padding: 100px 0;
+    padding: 0;
 }
 
 .solution-content {
@@ -307,6 +307,210 @@ body {
     height: auto;
     border-radius: 16px;
     box-shadow: var(--shadow-card);
+}
+
+/* 콘텐츠 섹션 (03~06) */
+.content-section {
+    background-color: var(--bg-card);
+    padding: 0;
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content-image {
+    text-align: center;
+}
+
+.content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+}
+
+/* 혜택 섹션 */
+.benefits-section {
+    background-color: var(--bg-card);
+    padding: 80px 0;
+}
+
+.benefits-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: -0.02em;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+}
+
+.benefit-card {
+    background-color: var(--bg-card);
+    padding: 40px 32px;
+    border-radius: 16px;
+    border: 2px solid #E5E5E5;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--bg-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: var(--text-dark-gray);
+    line-height: 1.7;
+}
+
+/* 워크숍 안내 섹션 */
+.workshop-section {
+    background-color: var(--bg-dark);
+    padding: 100px 0;
+}
+
+.workshop-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.workshop-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 60px;
+    letter-spacing: -0.02em;
+}
+
+.workshop-info {
+    background-color: var(--bg-card);
+    padding: 48px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-card);
+}
+
+.workshop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.workshop-item:last-child {
+    border-bottom: none;
+}
+
+.workshop-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--bg-dark);
+}
+
+.workshop-value {
+    font-size: 1.125rem;
+    color: var(--text-dark-gray);
+}
+
+.workshop-cta {
+    margin-top: 40px;
+}
+
+.workshop-button {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+    padding: 18px 48px;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.workshop-button:hover {
+    background-color: var(--accent-green-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* 푸터 */
+.footer {
+    background-color: var(--bg-darker);
+    padding: 60px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-info {
+    margin-bottom: 32px;
+}
+
+.footer-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.footer-description {
+    font-size: 1rem;
+    color: var(--text-gray);
+}
+
+.footer-contact {
+    margin-bottom: 32px;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    color: var(--text-gray);
+}
+
+.footer-copyright {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright p {
+    font-size: 0.875rem;
+    color: var(--text-gray);
 }
 
 .cta-button {
