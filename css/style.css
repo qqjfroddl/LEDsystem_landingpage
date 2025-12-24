@@ -241,7 +241,7 @@ body {
 /* 문제 제시 섹션 */
 .problem-section {
     background-color: var(--bg-card);
-    padding: 0;
+    padding: 0 0 80px 0;
 }
 
 .problem-content {
@@ -276,6 +276,18 @@ body {
 
 .problem-text p:last-child {
     margin-bottom: 0;
+}
+
+.problem-recommendation {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    color: var(--bg-dark) !important;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    line-height: 0.7;
+    letter-spacing: -0.02em;
+    text-align: center;
+    display: block;
 }
 
 /* 해결책 섹션 */
@@ -1386,6 +1398,11 @@ section {
         font-size: 0.9rem;
     }
 
+    .benefits-title {
+        font-size: 1.75rem;
+        margin-bottom: 36px;
+    }
+
     .workshop-title {
         font-size: 1.75rem;
         margin-bottom: 36px;
@@ -1416,6 +1433,11 @@ section {
     .problem-text p {
         font-size: 0.95rem;
         line-height: 1.7;
+    }
+
+    .problem-recommendation {
+        font-size: 1.75rem !important;
+        margin-top: 40px;
     }
 
     .info-box {
