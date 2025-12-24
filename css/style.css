@@ -353,8 +353,9 @@ body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    margin-top: 40px;
 }
 
 .benefit-card {
@@ -362,8 +363,11 @@ body {
     padding: 40px 32px;
     border-radius: 16px;
     border: 2px solid #E5E5E5;
-    text-align: center;
+    text-align: left;
     transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .benefit-card:hover {
@@ -372,23 +376,61 @@ body {
     transform: translateY(-4px);
 }
 
-.benefit-icon {
-    font-size: 3rem;
+.benefit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
     margin-bottom: 24px;
 }
 
-.benefit-card h3 {
+.benefit-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 255, 136, 0.05));
+    border-radius: 16px;
+    border: 2px solid rgba(0, 255, 136, 0.2);
+    flex-shrink: 0;
+}
+
+.benefit-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--bg-dark);
+    stroke-width: 2.5;
+}
+
+.benefit-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-green-dark));
+    color: var(--bg-dark);
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.benefit-card-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--bg-dark);
     margin-bottom: 16px;
     letter-spacing: -0.01em;
+    line-height: 1.4;
 }
 
-.benefit-card p {
+.benefit-card-text {
     font-size: 1rem;
     color: var(--text-dark-gray);
     line-height: 1.7;
+    flex: 1;
 }
 
 /* 워크숍 안내 섹션 */
@@ -412,19 +454,19 @@ body {
 }
 
 .workshop-info {
-    background-color: var(--bg-card);
+    background-color: var(--bg-darker);
     padding: 48px;
     border-radius: 16px;
     margin-bottom: 40px;
-    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .workshop-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
-    border-bottom: 1px solid #E5E5E5;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .workshop-item:last-child {
@@ -432,14 +474,17 @@ body {
 }
 
 .workshop-label {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: var(--bg-dark);
+    color: var(--text-white);
+    letter-spacing: -0.01em;
 }
 
 .workshop-value {
-    font-size: 1.125rem;
-    color: var(--text-dark-gray);
+    font-size: 1.25rem;
+    color: var(--text-white);
+    font-weight: 400;
+    text-align: right;
 }
 
 .workshop-cta {
@@ -1095,56 +1140,6 @@ section {
     background-color: var(--bg-dark);
 }
 
-.benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    margin-top: 0;
-}
-
-.benefit-card {
-    background: var(--bg-card);
-    padding: 48px 32px;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid var(--accent-green);
-    position: relative;
-    overflow: hidden;
-}
-
-.benefit-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light));
-}
-
-.benefit-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-card-hover);
-    border-color: var(--accent-green-light);
-}
-
-.benefit-number {
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: var(--accent-green);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.benefit-card p {
-    font-size: 1.125rem;
-    color: var(--bg-dark);
-    line-height: 1.7;
-    font-weight: 600;
-}
 
 /* 워크숍 안내 */
 .workshop-info {
@@ -1279,9 +1274,12 @@ section {
     .problem-box,
     .solution-box,
     .feature-card,
-    .diff-card,
-    .benefit-card {
+    .diff-card {
         padding: 40px 28px;
+    }
+
+    .benefit-card {
+        padding: 32px 24px;
     }
 }
 
@@ -1352,9 +1350,72 @@ section {
     .problem-box,
     .solution-box,
     .feature-card,
-    .diff-card,
-    .benefit-card {
+    .diff-card {
         padding: 32px 24px;
+    }
+
+    .benefit-card {
+        padding: 28px 20px;
+    }
+
+    .benefit-header {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .benefit-icon-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .benefit-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .benefit-badge {
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }
+
+    .benefit-card-title {
+        font-size: 1.25rem;
+    }
+
+    .benefit-card-text {
+        font-size: 0.9rem;
+    }
+
+    .workshop-title {
+        font-size: 1.75rem;
+        margin-bottom: 36px;
+    }
+
+    .workshop-info {
+        padding: 28px 20px;
+    }
+
+    .workshop-item {
+        padding: 18px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .workshop-label {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .workshop-value {
+        font-size: 0.85rem;
+        text-align: left;
+        line-height: 1.5;
+    }
+
+    .problem-text p {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 
     .info-box {
